@@ -9,5 +9,5 @@ dockerFile="centosServDF"
 ########################## from centosServSideDF
 
 docker build . -f $dockerFile -t $imageName
-docker run -it  --name=$containerName $imageName bash 
+docker run -it  --name=$containerName $imageName 
 docker network connect $networkName $containerName

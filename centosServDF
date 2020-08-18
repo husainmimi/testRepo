@@ -18,4 +18,4 @@ COPY httpd.conf /etc/httpd/conf
 
 RUN ln -s /myRepo /var/www/html/myRepo
 
-CMD httpd
+CMD httpd; bash
