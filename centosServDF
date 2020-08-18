@@ -1,0 +1,21 @@
+FROM centos:7
+
+RUN yum install createrepo  yum-plugin-priorities -y
+RUN cd /
+RUN mkdir myRepo
+RUN cd myRepo
+COPY myRepo/. /myRepo
+
+COPY taskRepo.repo /etc/yum.repos.d
+
+RUN createrepo /myRepo
+RUN yum clean all
+RUN yum install httpd -y
+
+COPY httpd.conf /etc/httpd/conf
+
+
+
+RUN ln -s /myRepo /var/www/html/myRepo
+
+CMD httpd
