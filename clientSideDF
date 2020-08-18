@@ -1,0 +1,11 @@
+FROM centos:7
+
+RUN yum install  yum-plugin-priorities -y
+
+
+COPY clientRepo.repo /etc/yum.repos.d
+
+
+
+
+CMD  bash
