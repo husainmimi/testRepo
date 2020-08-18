@@ -1,9 +1,9 @@
 #!/bin/sh
 
 
-containerName="serverSide"
-imageName="serverside"
-dockerFile="centosServDF"
+containerName="clientSide"
+imageName="clientside"
+dockerFile="clientSideDF"
 ########################## build a serverSide container and name it server Side 
 ########################## from centosServSideDF
 

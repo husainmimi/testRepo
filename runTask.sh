@@ -3,7 +3,7 @@
 #containerName, imageName represent name of serverSide 
 #containerName2, imageName2 represent name of client side 
 ###################################################################################
-
+networkName="myNetwork"
 ########################## remove a Container named serverSide#####################3
 containerName="serverSide"
 imageName="serverside"
@@ -37,10 +37,12 @@ fi
 #######################################################################################
 
 ./networkConf.sh
-./serverSideRun.sh
-
-
-
+tmux new-session -d -s "serverSide" ./serverSideRun.sh 
+tmux new-session -d -s "clientSide" ./clientSideRun.sh
+sleep 10
+docker network connect "$networkName" "$containerName"
+sleep 2
+docker network connect "$networkName" "$containerName2"
 
 
 
