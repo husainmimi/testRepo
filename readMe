@@ -1,5 +1,0 @@
-THIS task is run by ./runTask.sh which shutdown and remove old containers with names we want
-serverSideRun.sh is a script to build and run server side and connect it with network we created by networkConf.sh
-centosServDF is docker file for server side
-taskRepo is the repo on server side
-clientRepo is the repo on clientSide

@@ -1,7 +1,0 @@
-[taskRepoServerSide]
-name=task repos Hussein Mimi
-baseurl=file:///myRepo
-enabled=1
-gpgcheck=0
-priority=1
-
