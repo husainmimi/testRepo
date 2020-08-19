@@ -3,11 +3,11 @@ FROM centos:7
 RUN yum install at yum-plugin-priorities -y
 
 
-COPY clientRepo.repo /etc/yum.repos.d
+COPY clientSide/clientRepo.repo /etc/yum.repos.d
 RUN cd /
 RUN mkdir scripts
 
-COPY installHttpd.sh /scripts
-COPY validate.sh /scripts
+COPY clientSide/scripts/. /scripts
+
 
 CMD  atd; at now + 2 minute -f /scripts/installHttpd.sh; bash

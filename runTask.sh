@@ -35,8 +35,8 @@ fi
 
 
 #######################################################################################
-serverExecFile="./serverSideRun.sh"
-clientExecFile="./clientSideRun.sh"
+serverExecFile="./serverSide/serverSideRun.sh"
+clientExecFile="./clientSide/clientSideRun.sh"
 ./networkConf.sh
 tmux new-session -d -s $containerName $serverExecFile
 sleep 120
