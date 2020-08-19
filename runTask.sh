@@ -35,14 +35,15 @@ fi
 
 
 #######################################################################################
-
+serverExecFile="./serverSideRun.sh"
+clientExecFile="./clientSideRun.sh"
 ./networkConf.sh
-tmux new-session -d -s "serverSide" ./serverSideRun.sh 
-tmux new-session -d -s "clientSide" ./clientSideRun.sh
+tmux new-session -d -s $containerName $serverExecFile
+tmux new-session -d -s $containerName2 $clientExecFile
 sleep 10
-docker network connect "$networkName" "$containerName"
+docker network connect $networkName $containerName
 sleep 2
-docker network connect "$networkName" "$containerName2"
+docker network connect $networkName $containerName2
 
 
 
