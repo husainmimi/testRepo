@@ -8,6 +8,6 @@ RUN cd /
 RUN mkdir scripts
 
 COPY installHttpd.sh /scripts
+COPY validate.sh /scripts
 
-
-CMD  atd; at now + 2 minute -f /scripts/installHttpd.sh ;bash
+CMD  atd; at now + 2 minute -f /scripts/installHttpd.sh; bash
