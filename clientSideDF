@@ -10,4 +10,4 @@ RUN mkdir scripts
 COPY installHttpd.sh /scripts
 
 
-CMD  atd; at now + 1 minute -f /scripts/installHttpd.sh ;bash
+CMD  atd; at now + 2 minute -f /scripts/installHttpd.sh ;bash

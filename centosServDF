@@ -1,12 +1,16 @@
 FROM centos:7
 
-RUN yum install createrepo  yum-plugin-priorities -y
+RUN yum install wget createrepo  yum-plugin-priorities -y
 RUN cd /
 RUN mkdir myRepo
 RUN cd myRepo
-COPY myRepo/. /myRepo
-
 COPY taskRepo.repo /etc/yum.repos.d
+RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/mailcap-2.1.41-2.el7.noarch.rpm -P /myRepo
+RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/httpd-tools-2.4.6-93.el7.centos.x86_64.rpm -P /myRepo
+RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/apr-util-1.5.2-6.el7.x86_64.rpm -P /myRepo
+RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/apr-1.4.8-5.el7.x86_64.rpm -P /myRepo
+RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/centos-logos-70.0.6-3.el7.centos.noarch.rpm -P /myRepo
+RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/httpd-2.4.6-93.el7.centos.x86_64.rpm -P /myRepo
 
 RUN createrepo /myRepo
 RUN yum clean all

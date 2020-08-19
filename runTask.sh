@@ -39,8 +39,9 @@ serverExecFile="./serverSideRun.sh"
 clientExecFile="./clientSideRun.sh"
 ./networkConf.sh
 tmux new-session -d -s $containerName $serverExecFile
+sleep 120
 tmux new-session -d -s $containerName2 $clientExecFile
-sleep 10
+sleep 5
  
 docker network connect $networkName $containerName
 sleep 2
