@@ -3,7 +3,7 @@
 
 containerName="serverSide"
 imageName="serverside"
-dockerFile="serverSide/centosServDF"
+dockerFile="serverSide/Dockerfile"
 ########################## build a serverSide container and name it server Side 
 ########################## from centosServSideDF
 

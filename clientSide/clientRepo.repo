@@ -1,7 +1,0 @@
-[remoteRepo]
-name=task repos Hussein Mimi
-baseurl=http://serverSide:8899/myRepo
-enabled=1
-gpgcheck=0
-priority=1
-
