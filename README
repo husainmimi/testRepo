@@ -1,0 +1,18 @@
+THIS TASK IS BUILD FROM
+1. runtask.sh this is responsible to stop any container running with name serverSide and clientSide and creat new tmux session with our images (automation for run and test)
+2. serverSide folder this is contain the dockerfile for the server side image which is a server run on 8899 port with repo
+3. clientSide folder this is contain the dockerfile for the client side image which download the repo from serverSide on port 8899 and use it to install httpd
+
+######################################################################################################################################################################
+just RUN runTask.sh in background then open sides on tmux
+##############################################################################################
+what i changed
+1. install packages from repotrack not from yum downloader
+2. reorganize dockerfiles and remove extra new line
+3. change centosServDF name to Dokcerfile, also this is done for clientSide
+4. add readme
+5. remove test.txt
+6. let clientSide download the repo from serverSide not copy it.
+7. all repos are disabled in cleintSide except task repo
+8. remove uneeded packages installed on serverSide like wget
+
